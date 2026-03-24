@@ -1,0 +1,13 @@
+action_bound: 1.0
+hidden_size: 256
+lr: 3.0e-4
+number_of_qs: 2
+batch_size: 256
+tau: 0.005
+gamma: 0.99
+alpha: 0.05
+gradient_steps: 1
+ckpt_dir: "checkpoints"
+device: "cpu"
+buffer_size: 1000000
+max_env_steps: 1000000
