@@ -187,5 +187,5 @@ We use number of environment steps as the x-axis, thus measuring the sample effi
 
 We also have animations of the agent's behavior depending on the different number of environment steps.
 <p align="center">
-  <img src="plots/collage_0.gif" width="900">
+  <img src="plots/collage.gif" width="900">
 </p>
