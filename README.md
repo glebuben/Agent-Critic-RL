@@ -81,10 +81,12 @@ During training, we update the Q-networks (parametrized by $\theta_i$) and the v
 In the maximum entropy framework, the optimal policy, values and Q-values are defined as the following.
 
 The value is expected sum of rewards and entropies, given that the agent follows the policy $\pi$:
-$$ V_\pi(s) = \mathbb{E}_{\pi} \left[ \sum_{t=0}^{T} \gamma^t r(s_t, a_t) - \alpha \log \pi(a_t|s_t) | s_0 = s \right] $$
+
+$$V_\pi(s) = \mathbb{E}_{\pi} \left[ \sum_{t=0}^{T} \gamma^t r(s_t, a_t) - \alpha \log \pi(a_t|s_t) | s_0 = s \right]$$
 
 The Q-value is the expected sum of rewards and entropies, given that the agent takes action $a$ in state $s$ and then follows the policy $\pi$. Note that the first reward does not have the entropy term, since the action is already taken and there is no uncertainty about it:
-$$ Q_\pi(s, a) = r(s, a) + \mathbb{E}_{\pi} \left[ \sum_{t=1}^{T} \gamma^t r(s_t, a_t) - \alpha \log \pi(a_t|s_t) | s_0 = s, a_0 = a \right]  $$
+
+$$Q_\pi(s, a) = r(s, a) + \mathbb{E}_{\pi} \left[ \sum_{t=1}^{T} \gamma^t r(s_t, a_t) - \alpha \log \pi(a_t|s_t) | s_0 = s, a_0 = a \right]$$
 
 The soft Bellman equation has the following form:
 
@@ -113,7 +115,7 @@ $$\hat V(s_t) = \mathbb{E}_{a_t \sim \pi_\phi} [ Q_\theta(s_t, a_t) - \alpha \lo
 
 Here, we estimate the expectation over actions by sampling from the actual policy (we take one sample from the policy for each state in the batch).  To approximate the expectation over states, we sample a batch of states from the replay buffer. Note that we sample actions from the current policy on purpose: this way we treat the value function as a function of the current policy, i.e. this part of SAC is on-policy.
 
-We use minimum of two Q-networks: $ Q_\theta(s_t, a_t) = \min_{i=1,2} Q_{\theta_i}(s_t, a_t) $.
+We use minimum of two Q-networks: $Q_\theta(s_t, a_t) = \min_{i=1,2} Q_{\theta_i}(s_t, a_t)$.
 
 ## Q-function Objective
 
@@ -140,7 +142,7 @@ The projection means that we minimize KL between learned policy and the softmax 
 
 The important thing to note here is that we need to gradient the policy objective through the action samples. This is achieved by using the reparameterization trick in torch.
 
-Here we also have $ Q_\theta(s_t, a_t) = \min_{i=1,2} Q_{\theta_i}(s_t, a_t) $.
+Here we also have $Q_\theta(s_t, a_t) = \min_{i=1,2} Q_{\theta_i}(s_t, a_t)$.
 
 ## Policy Parameterization
 
