@@ -98,6 +98,6 @@ def train_sac(config_path):
             pbar.update(steps)
     except KeyboardInterrupt:
         print("Training interrupted by user.")
-        manager.save(os.path.join(ckpt_dir, "training_metrics.npz"))
     finally:
+        manager.save(os.path.join(ckpt_dir, "training_metrics.npz"))
         pbar.close()
