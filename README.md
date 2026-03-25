@@ -108,10 +108,11 @@ In the limit of $\alpha \to 0$, the softmax approaches the hard max, and the sof
 
 From here, we can derive the objective for the value function as:
 
-$$ J_V(\psi) = \mathbb{E}_{s_t \sim \mathcal D} \left[ \frac{1}{2} (V_\psi(s_t) - \hat V(s_t))^2 \right]$$
+$$J_V(\psi) = \mathbb{E}_{s_t \sim \mathcal D} \left[ \frac{1}{2} (V_\psi(s_t) - \hat V(s_t))^2 \right]$$
 
 where the target value is defined as:
-$$\hat V(s_t) = \mathbb{E}_{a_t \sim \pi_\phi} [ Q_\theta(s_t, a_t) - \alpha \log \pi_\phi(a_t|s_t) ]$$
+
+$$\hat V(s_t) = \mathbb{E}_{a_t \sim \pi_\phi} [Q_\theta(s_t, a_t) - \alpha \log \pi_\phi(a_t|s_t)]$$
 
 Here, we estimate the expectation over actions by sampling from the actual policy (we take one sample from the policy for each state in the batch).  To approximate the expectation over states, we sample a batch of states from the replay buffer. Note that we sample actions from the current policy on purpose: this way we treat the value function as a function of the current policy, i.e. this part of SAC is on-policy.
 
