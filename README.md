@@ -183,3 +183,9 @@ All three network architectures (policy, value and Q-networks) have two hidden l
 # Results
 
 We use number of environment steps as the x-axis, thus measuring the sample efficiency of the algorithm. We compute total episode return and distance traveled by the agent.
+
+
+We also have animations of the agent's behavior depending on the different number of environment steps.
+<p align="center">
+  <img src="plots/collage_0.gif" width="900">
+</p>
