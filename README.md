@@ -195,3 +195,7 @@ We also have animations of the agent's behavior depending on the different numbe
 <p align="center">
   <img src="resources/plot1.jpg" width="500">
 </p>
+
+<p align="center">
+  <img src="resources/plot2.jpg" width="500">
+</p>
